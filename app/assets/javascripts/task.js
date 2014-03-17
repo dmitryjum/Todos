@@ -16,9 +16,13 @@ function showTask(){
     $("ul").empty();
     for(i = 0; i < allTasks.length; i++) {
       var checkbox = document.createElement("input");
-      checkbox.type = "checkbox"
-      // checkbox.checked = allTasks[i].checked
-      $("ul").append("<li>" + allTasks[i].task + checkbox + "</li>");
+      checkbox.type = "checkbox";
+      checkbox.checked = allTasks[i].checked;
+      var liCheckBox = $("<li>");
+      liCheckBox.text(allTasks[i].task);
+      liCheckBox.append(checkbox);
+      $("ul").append(liCheckBox);
+      // $("ul").append("<li>" + allTasks[i].task + checkbox.checked + "</li>");
      }
   })
 }
